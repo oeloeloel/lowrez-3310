@@ -1,8 +1,11 @@
 require 'app/lowrez.rb'
 
+DARK  = [ 67,  82,  61]
+LIGHT = [199, 240, 216]
+
 def tick args
   # How to set the background color
-  args.lowrez.background_color = [199, 240, 216]
+  args.lowrez.background_color = LIGHT
 
   # ==== HELLO WORLD ======================================================
   # Steps to get started:
@@ -18,7 +21,7 @@ def tick args
   # - Remove the "#" infront of lines to comment out code
 
   # Invoke the hello_world subroutine/method
-  hello_world args # <---- add a "#" to the beginning of the line to stop running this subroutine/method.
+  # hello_world args # <---- add a "#" to the beginning of the line to stop running this subroutine/method.
   # =======================================================================
 
 
@@ -82,7 +85,7 @@ def tick args
 
   # ==== HOW TO CREATE BUTTONS ==================================================
   # Remove the "#" at the beginning of the line below
-  # how_to_create_buttons args
+  how_to_create_buttons args
   # =======================================================================
 
 
@@ -91,7 +94,7 @@ def tick args
 end
 
 def hello_world args
-  args.lowrez.solids  << { x: 0, y: 64, w: 10, h: 10, r: 255 }
+  args.lowrez.solids  << { x: 0, y: 44, w: 4, h: 4, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   args.lowrez.labels  << {
     x: 42,
@@ -99,9 +102,9 @@ def hello_world args
     text: "lowrez sample",
     size_enum: LOWREZ_FONT_SM,
     alignment_enum: 1,
-    r: 67,
-    g: 82,
-    b: 61,
+    r: DARK[0],
+    g: DARK[1],
+    b: DARK[2],
     a: 255,
     font: LOWREZ_FONT_PATH
   }
@@ -126,25 +129,25 @@ def how_to_render_a_label args
   # Render an EXTRA LARGE/XL label (remove the "#" in front of each line below)
   args.lowrez.labels << { x: 0, y: 43, text: "Hello World",
                          size_enum: LOWREZ_FONT_XL,
-                         r: 67, g: 82, b: 61, a: 255,
+                         r: DARK[0], g: DARK[1], b: DARK[2], a: 255,
                          font: LOWREZ_FONT_PATH }
 
   # Render a LARGE/LG label (remove the "#" in front of each line below)
   args.lowrez.labels << { x: 0, y: 26, text: "Hello World",
                           size_enum: LOWREZ_FONT_LG,
-                          r: 67, g: 82, b: 61, a: 255,
+                          r: DARK[0], g: DARK[1], b: DARK[2], a: 255,
                           font: LOWREZ_FONT_PATH }
 
   # Render a MEDIUM/MD label (remove the "#" in front of each line below)
   args.lowrez.labels << { x: 0, y: 13, text: "Hello World",
                           size_enum: LOWREZ_FONT_MD,
-                          r: 67, g: 82, b: 61, a: 255,
+                          r: DARK[0], g: DARK[1], b: DARK[2], a: 255,
                           font: LOWREZ_FONT_PATH }
 
   # Render a SMALL/SM label (remove the "#" in front of each line below)
   args.lowrez.labels << { x: 0, y: 4, text: "Hello World",
                           size_enum: LOWREZ_FONT_SM,
-                          r: 67, g: 82, b: 61, a: 255,
+                          r: DARK[0], g: DARK[1], b: DARK[2], a: 255,
                           font: LOWREZ_FONT_PATH }
 
   # You are provided args.lowrez.default_label which returns a Hash that you
@@ -169,16 +172,16 @@ end
 ## # =============================================================================
 def how_to_render_solids args
   # Render a red square at 0, 0 with a width and height of 1
-  args.lowrez.solids << { x: 0, y: 0, w: 1, h: 1, r: 67, g: 82, b: 61, a: 255 }
+  args.lowrez.solids << { x: 0, y: 0, w: 1, h: 1, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   # Render a red square at 1, 1 with a width and height of 2
-  args.lowrez.solids << { x: 1, y: 1, w: 2, h: 2, r: 67, g: 82, b: 61, a: 255 }
+  args.lowrez.solids << { x: 1, y: 1, w: 2, h: 2, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   # Render a red square at 3, 3 with a width and height of 3
-  args.lowrez.solids << { x: 3, y: 3, w: 3, h: 3, r: 67, g: 82, b: 61 }
+  args.lowrez.solids << { x: 3, y: 3, w: 3, h: 3, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   # Render a red square at 6, 6 with a width and height of 4
-  args.lowrez.solids << { x: 6, y: 6, w: 4, h: 4, r: 67, g: 82, b: 61 }
+  args.lowrez.solids << { x: 6, y: 6, w: 4, h: 4, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 end
 
 ## # =============================================================================
@@ -186,13 +189,13 @@ end
 ## # =============================================================================
 def how_to_render_borders args
   # Render a red square at 0, 0 with a width and height of 3
-  args.lowrez.borders << { x: 0, y: 0, w: 3, h: 3, r: 67, g: 82, b: 61, a: 255 }
+  args.lowrez.borders << { x: 0, y: 0, w: 3, h: 3, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   # Render a red square at 3, 3 with a width and height of 3
-  args.lowrez.borders << { x: 3, y: 3, w: 4, h: 4, r: 67, g: 82, b: 61, a: 255 }
+  args.lowrez.borders << { x: 3, y: 3, w: 4, h: 4, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   # Render a red square at 5, 5 with a width and height of 4
-  args.lowrez.borders << { x: 7, y: 7, w: 5, h: 5, r: 67, g: 82, b: 61, a: 255 }
+  args.lowrez.borders << { x: 7, y: 7, w: 5, h: 5, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 end
 
 ## # =============================================================================
@@ -200,13 +203,13 @@ end
 ## # =============================================================================
 def how_to_render_lines args
   # Render a horizontal line at the bottom
-  args.lowrez.lines << { x: 0, y: 0, x2: 48, y2:  0, r: 67, g: 82, b: 61 }
+  args.lowrez.lines << { x: 0, y: 0, x2: 48, y2:  0, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   # Render a vertical line at the left
-  args.lowrez.lines << { x: 0, y: 0, x2:  0, y2: 48, r: 67, g: 82, b: 61 }
+  args.lowrez.lines << { x: 0, y: 0, x2:  0, y2: 48, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 
   # Render a diagonal line starting from the bottom left and going to the top right
-  args.lowrez.lines << { x: 0, y: 0, x2: 48, y2: 48, r: 67, g: 82, b: 61 }
+  args.lowrez.lines << { x: 0, y: 0, x2: 48, y2: 48, r: DARK[0], g: DARK[1], b: DARK[2], a: 255 }
 end
 
 ## # =============================================================================
@@ -394,9 +397,6 @@ def how_to_move_a_sprite args
     path: 'sprites/lowrez-ship-dark-gray.png',
     # parameters beyond this point are optional
     angle: 0, # Note: rotation angle is denoted in degrees NOT radians
-    r: 255,
-    g: 255,
-    b: 255,
     a: 255
   }
 end
@@ -440,13 +440,13 @@ def how_to_determine_collision args
   if args.state.ship_one
     # use Ruby's .merge method which is available on ~Hash~ to set the sprite and alpha
     # render ship one
-    args.lowrez.sprites << args.state.ship_one.merge(path: 'sprites/lowrez-ship-dark-gray.png', a: 100)
+    args.lowrez.sprites << args.state.ship_one.merge(path: 'sprites/lowrez-ship-dark-gray.png', a: 255)
   end
 
   if args.state.ship_two
     # use Ruby's .merge method which is available on ~Hash~ to set the sprite and alpha
     # render ship two
-    args.lowrez.sprites << args.state.ship_two.merge(path: 'sprites/lowrez-ship-red.png', a: 100)
+    args.lowrez.sprites << args.state.ship_two.merge(path: 'sprites/lowrez-ship-dark-gray.png', a: 255)
   end
 
   # if both ship one and ship two are set, then determine collision
@@ -485,8 +485,8 @@ end
 ## # =============================================================================
 def how_to_create_buttons args
   # Define a button style
-  args.state.button_style = { w: 82, h: 10, r: 80, g: 80, b: 80 }
-  args.state.label_style  = { r: 80, g: 80, b: 80 }
+  args.state.button_style = { w: 82, h: 10, r: DARK[0], g: DARK[1], b: DARK[2] }
+  args.state.label_style  = { r: DARK[0], g: DARK[1], b: DARK[2] }
 
   # Render instructions
   args.state.button_message ||= "Press a Button!"
@@ -494,13 +494,13 @@ def how_to_create_buttons args
                             .default_label
                             .merge(args.state.label_style)
                             .merge(x: 42,
-                                   y: 12,
+                                   y: 19,
                                    text: args.state.button_message,
                                    alignment_enum: 1)
 
 
   # Creates button one using a border and a label
-  args.state.button_one_border = args.state.button_style.merge( x: 1, y: 32)
+  args.state.button_one_border = args.state.button_style.merge( x: 1, y: 37)
   args.lowrez.borders << args.state.button_one_border
   args.lowrez.labels  << args.lowrez
                              .default_label
@@ -510,7 +510,7 @@ def how_to_create_buttons args
                                     text: "Button One")
 
   # Creates button two using a border and a label
-  args.state.button_two_border = args.state.button_style.merge( x: 1, y: 20)
+  args.state.button_two_border = args.state.button_style.merge( x: 1, y: 26)
 
   args.lowrez.borders << args.state.button_two_border
   args.lowrez.labels << args.lowrez
@@ -541,7 +541,7 @@ def how_to_create_buttons args
                              .default_label
                              .merge(args.state.label_style)
                              .merge(x: 42,
-                                    y: 5,
+                                    y: 9,
                                     text: args.state.last_button_clicked,
                                     alignment_enum: 1)
 end
@@ -552,25 +552,25 @@ def render_debug args
     (LOWREZ_HEIGHT + 1).map_with_index do |i|
       args.outputs.static_debug << {
         x:  LOWREZ_X_OFFSET,
-        y:  LOWREZ_Y_OFFSET + (i * 10),
+        y:  LOWREZ_Y_OFFSET + (i * LOWREZ_ZOOM),
         x2: LOWREZ_X_OFFSET + LOWREZ_ZOOMED_WIDTH,
-        y2: LOWREZ_Y_OFFSET + (i * 10),
-        r: 128,
-        g: 128,
-        b: 128,
+        y2: LOWREZ_Y_OFFSET + (i * LOWREZ_ZOOM),
+        r: DARK[0],
+        g: DARK[1],
+        b: DARK[2],
         a: 80
       }.line
     end
 
     (LOWREZ_WIDTH + 1).map_with_index do |i|
       args.outputs.static_debug << {
-        x:  LOWREZ_X_OFFSET + (i * 10),
+        x:  LOWREZ_X_OFFSET + (i * LOWREZ_ZOOM),
         y:  LOWREZ_Y_OFFSET,
-        x2: LOWREZ_X_OFFSET + (i * 10),
+        x2: LOWREZ_X_OFFSET + (i * LOWREZ_ZOOM),
         y2: LOWREZ_Y_OFFSET + LOWREZ_ZOOMED_HEIGHT,
-        r: 128,
-        g: 128,
-        b: 128,
+        r: DARK[0],
+        g: DARK[1],
+        b: DARK[2],
         a: 80
       }.line
     end
